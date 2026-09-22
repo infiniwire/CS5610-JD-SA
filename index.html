@@ -1,11 +1,71 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>San Francisco Airbnb Listings</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/main.js" defer></script>
+  </head>
+  <body class="bg-light">
+    <nav class="navbar navbar-dark bg-primary">
+      <div class="container">
+        <a class="navbar-brand" href="#top">SF Airbnb Listings</a>
+      </div>
+    </nav>
+
+    <main id="top" class="container py-5">
+      <div class="text-center mb-4">
+        <h1>Explore San Francisco</h1>
+      </div>
+      <div class="row g-3 mb-4">
+        <div class="col-md-7">
+          <label class="form-label" for="search-input">Search listings</label>
+          <input
+            id="search-input"
+            class="form-control"
+            type="search"
+            placeholder="Search by listing name, host, or amenity"
+          />
+        </div>
+        <div class="col-md-5">
+          <label class="form-label" for="neighborhood-filter">Filter by neighborhood</label>
+          <select id="neighborhood-filter" class="form-select">
+            <option value="all">All neighborhoods</option>
+          </select>
+        </div>
+      </div>
+      <p id="results-message" class="text-muted" aria-live="polite"></p>
+      <div id="listings" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4"></div>
+    </main>
+
+    <template id="listing-template">
+      <div class="col">
+        <article class="card h-100 shadow-sm">
+          <img class="card-img-top listing-image" alt="" />
+          <div class="card-body d-flex flex-column">
+            <h2 class="card-title h5 listing-name"></h2>
+            <p class="card-text small listing-description"></p>
+            <h3 class="h6 mt-auto">Amenities</h3>
+            <ul class="list-group list-group-flush small amenities"></ul>
+          </div>
+          <div class="card-footer bg-white">
+            <div class="d-flex align-items-center justify-content-between gap-2">
+              <div class="d-flex align-items-center gap-2">
+                <img class="host-photo rounded-circle" alt="" />
+                <span class="small">Host: <strong class="host-name"></strong></span>
+              </div>
+              <strong class="price text-primary"></strong>
+            </div>
+          </div>
+        </article>
+      </div>
+    </template>
+  </body>
 </html>
