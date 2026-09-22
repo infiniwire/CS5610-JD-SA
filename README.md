@@ -2,7 +2,7 @@
 
 A simple Bootstrap 5.0 page that uses JavaScript `fetch()` and `await` to load and display the first 50 listings from `airbnb_sf_listings_500.json`.
 
-Each card shows the listing name, description, three amenities, host name and photo, price, and thumbnail.
+Each card shows the listing name, description, three amenities, host name and photo, price, and thumbnail. A search box and neighborhood filter make the first 50 listings easier to browse.
 
 ## Run locally
 
